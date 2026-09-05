@@ -42,6 +42,9 @@ set "NODE=%NODE_DIR%\node.exe"
 set "NPM_GLOBAL=D:\Program\Portable\devtools\FNM\npm-global"
 set "DEVSPACE_CLI=%NPM_GLOBAL%\node_modules\@waishnav\devspace\dist\cli.js"
 set "GIT_BASH=D:\Program\Portable\devtools\PortableGit\bin"
+rem 仅启用 Codex 兼容工具面，不调用 Codex CLI；直接由 MCP host 使用本地工具。
+set "DEVSPACE_TOOL_MODE=codex"
+set "DEVSPACE_SUBAGENTS=0"
 set "PATH=%SystemRoot%\System32;%SystemRoot%;%NODE_DIR%;%NPM_GLOBAL%;%GIT_BASH%;%PATH%"
 
 set "CLOUDFLARE_SERVICE=Cloudflared"

@@ -64,6 +64,9 @@ $cloudflareService = 'Cloudflared'
 $workingDirectory = $env:USERPROFILE
 $outputLog = Join-Path $managerDirectory "$logPrefix.log"
 $errorLog = Join-Path $managerDirectory "$logPrefix-error.log"
+# 仅启用 Codex 兼容工具面，不调用 Codex CLI；直接由 MCP host 使用本地工具。
+$env:DEVSPACE_TOOL_MODE = 'codex'
+$env:DEVSPACE_SUBAGENTS = '0'
 $env:PATH = (@($nodeDirectory, $npmGlobal, $gitBashDirectory, $env:PATH) | Where-Object { $_ }) -join ';'
 
 function Get-DevSpaceSettings {

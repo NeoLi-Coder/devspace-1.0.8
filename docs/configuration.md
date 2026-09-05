@@ -103,6 +103,8 @@ MCP clients discover metadata from:
 `DEVSPACE_TOOL_MODE` is unset: `1` selects `minimal` and `0` selects `full`.
 The `codex` mode must be selected through `DEVSPACE_TOOL_MODE` and always uses
 its fixed short tool names regardless of `DEVSPACE_TOOL_NAMING`.
+It only selects a Codex-compatible MCP tool surface. It does not invoke the
+Codex CLI, enable Subagents, or consume a Codex provider quota.
 
 Codex-mode commands run without a PTY by default. Set `tty: true` on
 `exec_command` for interactive terminal programs. PTY support uses the optional
